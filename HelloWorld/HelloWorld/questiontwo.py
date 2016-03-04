@@ -6,29 +6,24 @@ class Writer(QWidget):
     def __init__(self):
         QWidget.__init__(self, None)
         self.setWindowTitle("Simple Drawing")
-        self.rabbit = QImage("C:\\Users\\MSI\\Documents\\GitHub\\lab8\\HelloWorld\\HelloWorld\\dog.jpg")
 
-    def paintEvent(self, e):
+        layout  = QHBoxLayout(self)
+
+        self.label = QLabel("")
+
+        layout.addWidget(self.label)
+
+    def mousePressEvent(self, QMouseEvent):
         p = QPainter()
         p.begin(self)
+        
+        p.setPen(Qt.black)
+        p.drawPoint(QMouseEvent.pos())
 
-        p.setPen(QColor(0, 0, 0))
-        p.setBrush(QColor(0, 127, 0))
-        p.drawPolygon([
-            QPoint( 70, 100), QPoint(100, 110),
-            QPoint(130, 100), QPoint(100, 150),
-        ])
-
-        p.setPen(QColor(255, 127, 0))
-        p.setBrush(QColor(255, 127, 0))
-        p.drawPie(50, 150, 100, 100, 0, 180 * 16)
-
-        p.drawPolygon([
-            QPoint(50, 200), QPoint(150, 200), QPoint(100, 400),
-        ])
-
-        p.drawImage(QRect(200, 100, 320, 320), self.rabbit)
         p.end()
+
+    #def paintEvent(self, e):
+        
 
 
 def main():
