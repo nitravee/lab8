@@ -2,8 +2,6 @@
 #from PySide.QtCore import*
 #from PySide.QtGui import*
 
-
-
 #class Simple_drawing_window(QWidget):
 #    def __init__(self):
 #        QWidget.__init__(self,None)
@@ -26,6 +24,17 @@
 #            QPoint(50,200),QPoint(150,200),QPoint(100,400)])
 #        p.end()
 
+#def main():
+#    app = QApplication(sys.argv)
+
+#    w = Simple_drawing_window()
+#    w.show()
+
+#    return app.exec_()
+
+#if __name__ == "__main__":
+#    sys.exit(main())
+
 
 import sys
 from PySide.QtCore import *
@@ -35,7 +44,7 @@ class Simple_drawing_window(QWidget):
     def __init__(self):
         QWidget.__init__(self, None)
         self.setWindowTitle("Simple Drawing")
-        self.rabbit = QImage("images/rabbit.png")
+        self.rabbit = QImage("C:\\Users\\MSI\\Documents\\GitHub\\lab8\\HelloWorld\\HelloWorld\\dog.jpg")
 
     def paintEvent(self, e):
         p = QPainter()
